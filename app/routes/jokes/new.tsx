@@ -1,5 +1,12 @@
 import type { ActionFunction, LoaderFunction } from "remix";
-import { useActionData, redirect, useCatch, useTransition, Link } from "remix";
+import {
+  useActionData,
+  redirect,
+  useCatch,
+  Form,
+  useTransition,
+  Link,
+} from "remix";
 import { JokeDisplay } from "~/components/joke";
 
 import { db } from "~/utils/db.server";
@@ -91,7 +98,7 @@ export default function NewJokeRoute() {
   return (
     <div>
       <p>Add your own hilarious joke</p>
-      <form method="post">
+      <Form method="post">
         <div>
           <label>
             Name:{" "}
@@ -140,7 +147,7 @@ export default function NewJokeRoute() {
             Add
           </button>
         </div>
-      </form>
+      </Form>
     </div>
   );
 }
